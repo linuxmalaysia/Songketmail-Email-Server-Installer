@@ -1,0 +1,8 @@
+* Version 0.0.1 30 Dec 2007
+This RPM SPEC is for Spamassassin to refer to Mysql.
+Include in this release a dataset already trained from
+
+http://spamassassin.apache.org/publiccorpus/
+
+Support in Malaysia for Linux and Open Source
+http://linuxmalaysia.harisfazillah.info/

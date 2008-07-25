@@ -1,0 +1,53 @@
+Delivered-To: linuxmalaysia@gmail.com
+Received: by 10.142.141.8 with SMTP id o8cs38641wfd;
+        Wed, 24 Oct 2007 01:08:14 -0700 (PDT)
+Received: by 10.141.171.6 with SMTP id y6mr136199rvo.1193213294345;
+        Wed, 24 Oct 2007 01:08:14 -0700 (PDT)
+Return-Path: <haris@oscc.org.my>
+Received: from mail.oscc.org.my ([210.187.27.194])
+        by mx.google.com with ESMTP id q18si686567pog.2007.10.24.01.08.11;
+        Wed, 24 Oct 2007 01:08:14 -0700 (PDT)
+Received-SPF: pass (google.com: domain of haris@oscc.org.my designates 210.187.27.194 as permitted sender) client-ip=210.187.27.194;
+Authentication-Results: mx.google.com; spf=pass (google.com: domain of haris@oscc.org.my designates 210.187.27.194 as permitted sender) smtp.mail=haris@oscc.org.my
+Received: from localhost.localdomain (t2-mail [127.0.0.1])
+	by mail.oscc.org.my (Postfix) with ESMTP id BD5961350001;
+	Wed, 24 Oct 2007 16:03:59 +0800 (MYT)
+Received: from keli.oscc.org.my (keli.oscc.org.my [10.20.10.15]) by
+	mail.oscc.org.my (Horde MIME library) with HTTP; Wed, 24 Oct 2007 16:03:59
+	+0800
+Message-ID: <20071024160359.nkzuqx8v4ggko0ss@mail.oscc.org.my>
+X-Priority: 3 (Normal)
+Date: Wed, 24 Oct 2007 16:03:59 +0800
+From: Harisfazillah Jamel <haris@oscc.org.my>
+To: haris@oscc.org.my
+Cc: linuxmalaysia@gmail.com
+Subject: Ini adalah contoh email dalam bahasa melayu
+MIME-Version: 1.0
+Content-Type: text/plain;
+	charset=ISO-8859-1;
+	DelSp="Yes";
+	format="flowed"
+Content-Disposition: inline
+Content-Transfer-Encoding: 7bit
+User-Agent: Internet Messaging Program (IMP) H3 (4.1.4)
+X-Originating-IP: 10.20.10.15
+X-Remote-Browser: Mozilla/5.0 (X11; U; Linux i686; en-US; rv:1.8.1.8)
+	Gecko/20071022 Ubuntu/7.10 (gutsy) Firefox/2.0.0.8
+X-oscc-MailScanner-Watermark: 1193817844.78359@B6x9dDTt+3qUPbOijuyeAw
+X-oscc-MailScanner-Information: Please contact the ISP for more information
+X-oscc-MailScanner: Found to be clean
+X-oscc-MailScanner-From: haris@oscc.org.my
+X-Spam-Status: No
+
+Ini adalah contoh email dalam bahasa melayu untuk digunakan sebagai  
+sa-learn contoh dan latihan. Dengan harapan ia boleh menjanakan  
+bayesian dalam bahasa melayu.
+
+Harisfazillah Jamel
+
+
+
+-- 
+This message has been scanned for viruses and dangerous content
+by OSCC MySpamGuard, and is believed to be clean.
+http://myspamguard.oscc.org.my/

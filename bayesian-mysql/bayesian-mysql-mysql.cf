@@ -1,0 +1,23 @@
+# By Harisfazillah Jamel OSCC
+# 25 oct 2007
+# v1
+
+#Should the Bayesian classifier use hapaxes (words/tokens that occur only once) when classifying? This produces significantly better hit-rates, but increases database size by about a factor of 8 to 10.
+
+bayes_use_hapaxes 1
+
+bayes_learn_to_journal 1
+
+# Setting using MySql
+bayes_store_module Mail::SpamAssassin::BayesStore::SQL
+bayes_sql_dsn DBI:mysql:bayesianmysql:localhost
+bayes_sql_username bayesianmysql
+bayes_sql_password kambing1234
+
+# Please change to your MTA running id. ie postfix or qmail
+bayes_sql_override_username root
+
+auto_whitelist_factory          Mail::SpamAssassin::SQLBasedAddrList
+user_awl_dsn                    DBI:mysql:bayesianmysql:localhost
+user_awl_sql_username           bayesianmysql
+user_awl_sql_password           kambing1234

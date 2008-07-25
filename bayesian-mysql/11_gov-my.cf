@@ -1,0 +1,80 @@
+# By Harisfazillah Jamel
+# For OSCC http://www.oscc.org.my/
+# 12 Oct 2007
+# To make server pass this. Mailserver domain name must be
+# as per domain of email for gov.my
+# will check From = Received = Messageid must all the same domain
+# easy to be spoof. for POC
+# This rules are for gov.my to and from gov.my
+# score local withnet withbayes withbayesnet
+# version 0.1
+
+# if from gov.my From = Messageid with bayesian minus score
+header   __AT_GOV_MY_MSGID1    MESSAGEID =~ /\@[a-z0-9.-]+\.gov\.my\b/i
+header   __FROM_GOV_MY         From =~ /\@[a-z0-9.-]+\.gov\.my\b/i
+meta     CONFIRM_MSGID_GOV_MY1 (__AT_GOV_MY_MSGID1 && __FROM_GOV_MY)
+describe CONFIRM_MSGID_GOV_MY1 Message-ID with from is confirm, (gov.my)
+score    CONFIRM_MSGID_GOV_MY1 -0.001 -0.001 -0.001 -0.001
+
+# if from gov.my From = Received = Messageid with bayesian minus score
+header   __AT_GOV_MY_MSGID2    MESSAGEID =~ /\@[a-z0-9.-]+\.gov\.my\b/i
+header   __RECEIVED_GOV_MY     Received =~ /\.[a-z0-9.-]+\.gov\.my\b/i
+meta     CONFIRM_MSGID_GOV_MY2 (__AT_GOV_MY_MSGID2 && __RECEIVED_GOV_MY && CONFIRM_MSGID_GOV_MY1 && !NO_DNS_FOR_FROM)
+describe CONFIRM_MSGID_GOV_MY2 Message-ID with received is confirm, (gov.my)
+score    CONFIRM_MSGID_GOV_MY2 -0.01 -0.01 -0.276 -0.296
+tflags CONFIRM_MSGID_GOV_MY2 nice
+
+# If not from gov.my give higher score
+header   __AT_GOV_MY_MSGID3    MESSAGEID =~ /\@[a-z0-9.-]+\.gov\.my\b/i
+header   __NOTFROM_GOV_MY      From =~ /\@[a-z0-9.-]+\.gov\.my\b/i
+meta     CONFIRM_MSGID_GOV_MY3 (!__AT_GOV_MY_MSGID3 && !__NOTFROM_GOV_MY)
+describe CONFIRM_MSGID_GOV_MY3 Message-ID with from is not from gov.my, (gov.my)
+score    CONFIRM_MSGID_GOV_MY3 0.01 0.456 0.476 0.596
+
+# if From != Messageid with bayesian add score
+# Be carefull gov email server may in a DMZ area with no domain related to gov.my
+# May get different MSGID
+header   __AT_GOV_MY_MSGID4    MESSAGEID =~ /\@[a-z0-9.-]+\.gov\.my\b/i
+header   __NOTFROM_GOV_MY4     From =~ /\@[a-z0-9.-]+\.gov\.my\b/i
+meta     CONFIRM_MSGID_GOV_MY4 (!__AT_GOV_MY_MSGID4 && __NOTFROM_GOV_MY4)
+describe CONFIRM_MSGID_GOV_MY4 Message-ID with from is not the same, (gov.my)
+score    CONFIRM_MSGID_GOV_MY4 0.087 0.4156 0.166 0.176
+
+# If not from received gov.my give higher score
+header   __RECEIVED_GOV_MY2    Received =~ /\.[a-z0-9.-]+\.gov\.my\b/i
+header   __NOTFROM_GOV_MY2     From =~ /\@[a-z0-9.-]+\.gov\.my\b/i
+meta     CONFIRM_MSGID_GOV_MY5 (!__NOTFROM_GOV_MY2 && !__RECEIVED_GOV_MY2)
+describe CONFIRM_MSGID_GOV_MY5 Received with from is not from gov.my, (gov.my)
+score    CONFIRM_MSGID_GOV_MY5 0.01 0.156 0.476 0.596
+
+# If not received gov.my give higher score
+header   __AT_GOV_MY_MSGID6    MESSAGEID =~ /\@[a-z0-9.-]+\.gov\.my\b/i
+header   __RECEIVED_GOV_MY3    Received =~ /\.[a-z0-9.-]+\.gov\.my\b/i
+meta     CONFIRM_MSGID_GOV_MY6 (!__AT_GOV_MY_MSGID6 && !__RECEIVED_GOV_MY3)
+describe CONFIRM_MSGID_GOV_MY6 Message-ID with received is not from gov.my, (gov.my)
+score    CONFIRM_MSGID_GOV_MY6 0.01 0.456 0.476 0.596
+
+# If not to gov.my give higher score
+header   __AT_GOV_MY_MSGID7     MESSAGEID =~ /\@[a-z0-9.-]+\.gov\.my\b/i
+header   __NOTTO_GOV_MY         To =~ /\@[a-z0-9.-]+\.gov\.my\b/i
+meta     CONFIRM_MSGID_GOV_MY7  (!__AT_GOV_MY_MSGID7 && !__NOTTO_GOV_MY)
+describe CONFIRM_MSGID_GOV_MY7  Message-ID with To is not from gov.my, (gov.my)
+score    CONFIRM_MSGID_GOV_MY7 0.01 0.456 0.476 0.596
+# for non gov
+#score CONFIRM_MSGID_GOV_MY7 0.001
+
+# If not to gov.my give higher score
+header   __AT_GOV_MY_MSGID8     MESSAGEID =~ /\@[a-z0-9.-]+\.gov\.my\b/i
+header   __NOTTO_GOV_MY2        To =~ /\@[a-z0-9.-]+\.gov\.my\b/i
+meta     CONFIRM_MSGID_GOV_MY8  (!__AT_GOV_MY_MSGID8 && __NOTTO_GOV_MY2)
+describe CONFIRM_MSGID_GOV_MY8  Message-ID with To is not from gov.my, (gov.my)
+score    CONFIRM_MSGID_GOV_MY8 0.087 0.4156 0.166 0.176
+# for non gov
+#score CONFIRM_MSGID_GOV_MY8 0.001
+
+# Begin whitelist server to baung
+
+header OSCC_ACCREDITED_COI      eval:check_rbl('spek-lastexternal', 'spek.oscc.org.my.', '127.0.0.2')
+describe OSCC_ACCREDITED_COI    OSCC Accredited Confirmed Opt-In or Better
+tflags OSCC_ACCREDITED_COI      net nice
+score OSCC_ACCREDITED_COI -10

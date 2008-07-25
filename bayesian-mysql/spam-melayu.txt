@@ -1,0 +1,57 @@
+Received: from smtp.tm.net.my (smtp.tm.net.my [202.188.0.212])
+	by mail.oscc.org.my (Postfix) with ESMTP id E46971350002
+	for <suria@oscc.org.my>; Mon, 22 Oct 2007 14:46:21 +0800 (MYT)
+Received: from bar2.tm.net.my ([192.168.10.112])
+	by smtp2.tm.net.my (Sun Java System Messaging Server 6.2-8.04 (built Feb 28 2007))
+	with ESMTP id <0JQA00HPSWAUDDA0@smtp2.tm.net.my> for suria@oscc.org.my;
+	Mon, 22 Oct 2007 14:49:42 +0800 (MYT)
+Received: from smtp3.tm.net.my (smtp3.secure.tmnet [192.168.10.108])
+	by bar2.tm.net.my (Spam Firewall) with ESMTP id 4FB0AD0497B1
+	for <suria@oscc.org.my>; Mon, 22 Oct 2007 14:41:35 +0800 (MYT)
+Received: from av.tm.net.my ([192.168.10.121])
+	by smtp3.tm.net.my (Sun Java System Messaging Server 6.2-8.04 (built Feb 28 2007))
+	with ESMTP id <0JQA00D84VWQP0J0@smtp3.tm.net.my> for suria@oscc.org.my;
+	Mon, 22 Oct 2007 14:41:14 +0800 (MYT)
+Received: from localhost ([127.0.0.1])
+	by av1.tm.net.my (Sun Java System Messaging Server 6.2-8.04 (built Feb 28 2007))
+	with SMTP id <0JQA00B4MVWPYN60@av1.tm.net.my> for suria@oscc.org.my;
+	Mon, 22 Oct 2007 14:41:14 +0800 (MYT)
+Received: from mauliana ([60.54.20.32])
+	by smtp2.tm.net.my (Sun Java System Messaging Server 6.2-8.04 (built Feb 28 2007))
+	with ESMTPA id <0JQA00HCXVTWDD90@smtp2.tm.net.my>;
+	Mon, 22 Oct 2007 14:39:39 +0800 (MYT)
+Date: Mon, 22 Oct 2007 14:39:34 +0800
+From: com@tm.net.my
+Subject: Nak Duit Lepas Raya..?
+To: Undisclosed recipients: ;
+Reply-to: aikesoftware@gmail.com
+Message-id: <0JQA00HCZVTXDD90@smtp2.tm.net.my>
+X-MIMEOLE: Produced By Microsoft MimeOLE V6.00.2600.0000
+X-Mailer: Microsoft Outlook Express 6.00.2600.0000
+X-Priority: 3
+X-MSMail-priority: Normal
+X-oscc-MailScanner-Watermark: 1193640382.11715@wTIchBIcd0bpXzI3go288A
+X-oscc-MailScanner-Information: Please contact the ISP for more information
+X-oscc-MailScanner: Found to be clean
+X-oscc-MailScanner-SpamScore: ssss
+X-oscc-MailScanner-From: mauliana@streamyx.com
+X-Spam-Status: No
+Return-Path: mauliana@streamyx.com
+MIME-Version: 1.0
+Content-Type: text/plain; charset=Windows-1251
+Content-transfer-encoding: 7BIT
+
+Dear,
+
+Selamat Hari Raya
+Mohon Maaf Zahir dan batin
+
+dengan modal RM35
+anda boleh mendapatkan RM32,096
+
+http://Modal35.com
+
+Regards
+
+Admin
+
